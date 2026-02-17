@@ -44,7 +44,6 @@ export default async function AdminVideosPage({
             <TableHead>標題</TableHead>
             <TableHead>狀態</TableHead>
             <TableHead>上傳狀態</TableHead>
-            <TableHead>觀看數</TableHead>
             <TableHead>建立日期</TableHead>
             <TableHead className="w-[80px]" />
           </TableRow>
@@ -59,7 +58,6 @@ export default async function AdminVideosPage({
               <TableCell>
                 <UploadStatusBadge status={video.uploadStatus} />
               </TableCell>
-              <TableCell>{video.viewCount.toLocaleString()}</TableCell>
               <TableCell>{formatDate(video.createdAt)}</TableCell>
               <TableCell>
                 <VideoRowActions videoId={video.id} status={video.status} />

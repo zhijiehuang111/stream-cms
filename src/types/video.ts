@@ -13,7 +13,6 @@ export type VideoCardData = Pick<
   | "muxPlaybackId"
   | "duration"
   | "status"
-  | "viewCount"
   | "createdAt"
 >;
 

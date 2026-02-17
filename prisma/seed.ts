@@ -45,7 +45,6 @@ async function main() {
       uploadStatus: "ready",
       duration: 1820,
       status: "published",
-      viewCount: 1500,
     },
   });
 
@@ -60,7 +59,6 @@ async function main() {
       uploadStatus: "ready",
       duration: 2400,
       status: "published",
-      viewCount: 830,
     },
   });
 
@@ -75,7 +73,6 @@ async function main() {
       uploadStatus: "waiting",
       duration: 960,
       status: "draft",
-      viewCount: 0,
     },
   });
 

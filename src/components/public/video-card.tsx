@@ -38,11 +38,6 @@ export function VideoCard({ video }: { video: VideoCardData }) {
           <h3 className="line-clamp-2 text-sm font-semibold leading-snug">
             {video.title}
           </h3>
-          <div className="mt-2 flex items-center gap-2">
-            <span className="text-xs text-muted-foreground">
-              {video.viewCount.toLocaleString()} 次觀看
-            </span>
-          </div>
         </CardContent>
       </Card>
     </Link>

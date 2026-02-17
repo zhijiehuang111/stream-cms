@@ -1,7 +1,7 @@
 import { getDashboardStats, getRecentVideos } from "@/data/dashboard";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Film, Eye, FileText } from "lucide-react";
+import { Film, FileText } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 
 export default async function DashboardPage() {
@@ -14,7 +14,6 @@ export default async function DashboardPage() {
     { label: "影片總數", value: stats.totalVideos, icon: Film },
     { label: "已發布", value: stats.publishedVideos, icon: FileText },
     { label: "草稿", value: stats.draftVideos, icon: FileText },
-    { label: "總觀看數", value: stats.totalViews.toLocaleString(), icon: Eye },
   ];
 
   return (
