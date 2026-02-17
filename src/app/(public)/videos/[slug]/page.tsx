@@ -62,7 +62,6 @@ export default async function VideoDetailPage({
           <h1 className="text-2xl font-bold">{video.title}</h1>
           <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
             {video.duration > 0 && <span>{formatDuration(video.duration)}</span>}
-            <span>{video.viewCount.toLocaleString()} 次觀看</span>
             <span>{formatDate(video.createdAt)}</span>
           </div>
           {video.description && (

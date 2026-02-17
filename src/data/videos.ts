@@ -19,7 +19,6 @@ const videoCardSelect = {
   muxPlaybackId: true,
   duration: true,
   status: true,
-  viewCount: true,
   createdAt: true,
 } as const;
 
@@ -156,11 +155,3 @@ export async function getVideoById(
   return prisma.video.findUnique({ where: { id } });
 }
 
-// ── Public: increment view count ───────────────────────────
-
-export async function incrementViewCount(id: string): Promise<void> {
-  await prisma.video.update({
-    where: { id },
-    data: { viewCount: { increment: 1 } },
-  });
-}

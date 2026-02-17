@@ -38,7 +38,6 @@ export async function GET(request: NextRequest) {
         slug: true,
         thumbnailUrl: true,
         duration: true,
-        viewCount: true,
         createdAt: true,
       },
       orderBy: { createdAt: "desc" },

@@ -7,7 +7,6 @@ export type DashboardStats = {
   totalVideos: number;
   publishedVideos: number;
   draftVideos: number;
-  totalViews: number;
 };
 
 const videoCardSelect = {
@@ -17,24 +16,21 @@ const videoCardSelect = {
   thumbnailUrl: true,
   duration: true,
   status: true,
-  viewCount: true,
   createdAt: true,
 } as const;
 
 export async function getDashboardStats(): Promise<DashboardStats> {
-  const [totalVideos, publishedVideos, draftVideos, viewsAgg] =
+  const [totalVideos, publishedVideos, draftVideos] =
     await Promise.all([
       prisma.video.count(),
       prisma.video.count({ where: { status: "published" } }),
       prisma.video.count({ where: { status: "draft" } }),
-      prisma.video.aggregate({ _sum: { viewCount: true } }),
     ]);
 
   return {
     totalVideos,
     publishedVideos,
     draftVideos,
-    totalViews: viewsAgg._sum.viewCount ?? 0,
   };
 }
 
